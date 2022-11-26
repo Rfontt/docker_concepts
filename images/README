@@ -1,0 +1,29 @@
+# Images
+
+We can create images using a file called ```Dockerfile```.
+
+## Dockerfile
+
+- First, we need to define the images name and images version. To that, we'll use the **FROM** command.
+
+```yml
+FROM image_name:version
+```
+
+- The **WORKDIR** is the main container folder for us. All commands after it will be executed in this folder.
+
+```yml
+WORKDIR /app
+```
+
+- To run linux commands we'll use the **RUN** command.
+
+```yml
+RUN apt-get update && apt-get install -y
+```
+
+- To COPY archives to other folder, we need to use the **COPY** command.
+
+```yml
+COPY volumes /usr/share/nginx
+```
