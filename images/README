@@ -27,3 +27,29 @@ RUN apt-get update && apt-get install -y
 ```yml
 COPY volumes /usr/share/nginx
 ```
+
+## Commands explanations
+
+- CMD
+
+It's used to execute commands (to run the application, for example). But it can be replaced when we run the container through the terminal.
+
+> This is our command.
+
+```yml
+CMD ["echo", "hello world"]
+```
+
+> This will replace our command when we run container through the terminal.
+
+```sh
+docker run --rm test:test echo "oi"
+```
+
+- ENTRYPOINT
+
+It's used in the same way as CMD, but it cannot be replaced when we run a docker command through the terminal.
+
+```yml
+ENTRYPOINT ["echo", "hello world"]
+```
